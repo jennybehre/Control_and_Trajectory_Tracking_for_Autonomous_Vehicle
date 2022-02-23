@@ -126,17 +126,29 @@ The following image shows the CARLA simulator after completing the TODOs in the 
 
 
 ### Steering plot
-    Add the plots to your report and explain them (describe what you see)
+Add the plots to your report and explain them (describe what you see)
+In this plot you can see the steering output in orange and the error steering in blue.
 
 ![image](img/steering.png)
 
 ### Throttle plot
-    Add the plots to your report and explain them (describe what you see)
+Add the plots to your report and explain them (describe what you see)
 
 ![image](img/throttle.png)
 
 
 ### What is the effect of the PID according to the plots, how each part of the PID affects the control command?
+
+#### Proportional term
+This term produces an output value that is proportional to the current cross track error. A high value results in a large change in the output for a given change in the error. In that case the car overshoots a lot. That brings a wave like pattern in the plots.
+
+
+#### Integral term
+The integral term brings a persisting error to zero. This force will increased as time passes. By applying a too high value when the error is small and decreasing, the car would overshoot either.
+
+
+#### Derivate term
+This term influences the rate of change of error by trying to flattenig the error into a horizontal line. This prevents an overshoot.
 
 
 ### How would you design a way to automatically tune the PID parameters?
