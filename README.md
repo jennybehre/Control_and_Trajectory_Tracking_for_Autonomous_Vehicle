@@ -126,14 +126,12 @@ The following image shows the CARLA simulator after completing the TODOs in the 
 
 
 ### Steering plot
-Add the plots to your report and explain them (describe what you see)
-In this plot you can see the steering output in orange and the error steering in blue.
+In this plot you can see the steering output in orange and the error steering in blue. The PID controller tries to reduce the error. Nevertheless the rate of change is lightly to high. In that case some more tuning especially in the derivate term could be helpful.
 
 ![image](img/steering.png)
 
 ### Throttle plot
-Add the plots to your report and explain them (describe what you see)
-
+The following plot shows the throttle (green) and brake output (orange) as well as the error throttle (blue). In the first 20 iteration the error of the PID controller swings a lot. After some further iteration the integral term can compensate that error. The low proportonial term cause an offset of the cross track error. Anyways the car drove much smoother through the track.  
 ![image](img/throttle.png)
 
 
@@ -148,7 +146,10 @@ The integral term brings a persisting error to zero. This force will increased a
 
 
 #### Derivate term
-This term influences the rate of change of error by trying to flattenig the error into a horizontal line. This prevents an overshoot.
+This term influences the rate of change of error by trying to flattenig the error into a horizontal line. This prevents an overshoot.  
+
+
+The car didn't finished completely the track and the trajectory is neither perfect. So there is a lot of potential to improve the PID controller.
 
 
 ### How would you design a way to automatically tune the PID parameters?
