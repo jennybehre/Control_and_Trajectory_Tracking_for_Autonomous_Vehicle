@@ -157,7 +157,7 @@ To automatically tune the PID parameters I would use the TWIDDLE algorithm which
 
 
 ### PID controller is a model free controller, i.e. it does not use a model of the car. Could you explain the pros and cons of this type of controller?
-An advantage of a model free controller is that it is not as complex as a model based controller. Therefor, you can use it to solve any problem without changing the settings. Additionally, you can calculate the output very fast which make it usable for realtime applications.   
+An advantage of a model free controller is that it is not as complex as a model based controller. Therefore, you can use it to solve any problem without changing the settings. Additionally, you can calculate the output very fast which make it usable for realtime applications.   
 A disvantage is that the model free controller does not take care of the boundary conditions of a specific car. Also, the PID controller can only calculate the best output for the current situation. That makes it hard to deal with several scenarios because of the delay of the controller.
 
 
