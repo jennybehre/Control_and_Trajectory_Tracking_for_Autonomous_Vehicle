@@ -126,12 +126,12 @@ The following image shows the CARLA simulator after completing the TODOs in the 
 
 
 ### Steering plot
-In this plot you can see the steering output in orange and the error steering in blue. The PID controller tries to reduce the error. Nevertheless the rate of change is lightly to high. In that case some more tuning especially in the derivate term could be helpful.
+In this plot you can see the steering output in orange and the error of the steering in blue. The PID controller tries to reduce the error. Nevertheless the rate of change is slightly to high. In that case some more tuning especially in the derivate term could be helpful.
 
 ![image](img/steering.png)
 
 ### Throttle plot
-The following plot shows the throttle (green) and brake output (orange) as well as the error throttle (blue). In the first 20 iteration the error of the PID controller swings a lot. After some further iteration the integral term can compensate that error. The low proportonial term cause an offset of the cross track error. Anyways the car drove much smoother through the track.  
+The following plot shows the throttle (green) and brake output (orange) as well as the error of the throttle (blue). In the first 20 iteration the error of the PID controller swings a lot. After some further iteration the integral term can compensate that error. The low proportonial term causes an offset of the cross track error. Anyways the car drove much smoother through the track.  
 ![image](img/throttle.png)
 
 
@@ -142,14 +142,14 @@ This term produces an output value that is proportional to the current cross tra
 
 
 #### Integral term
-The integral term brings a persisting error to zero. This force will increased as time passes. By applying a too high value when the error is small and decreasing, the car would overshoot either.
+The integral term brings a persisting error to zero. This force will increased as time passes. By applying a too high value when the error is small and decreasing, the car would also overshoot.
 
 
 #### Derivate term
 This term influences the rate of change of error by trying to flattenig the error into a horizontal line. This prevents an overshoot.  
 
 
-The car didn't finished completely the track and the trajectory is neither perfect. So there is a lot of potential to improve the PID controller.
+The car didn't finish the track completely and the trajectory is not perfect either. So there is a lot of potential to improve the PID controller.
 
 
 ### How would you design a way to automatically tune the PID parameters?
@@ -157,8 +157,8 @@ To automatically tune the PID parameters I would use the TWIDDLE algorithm which
 
 
 ### PID controller is a model free controller, i.e. it does not use a model of the car. Could you explain the pros and cons of this type of controller?
-An advantage of a model free controller is that it is not as complex as a model based controller. Theirfore you can use basic algorithms for calculation.   
-A disvantage is that the model free controller does not take care of the boundary conditions of a car like the radius of the turning circle.
+An advantage of a model free controller is that it is not as complex as a model based controller. Therefor, you can use it to solve any problem without changing the settings. Additionally, you can calculate the output very fast which make it usable for realtime applications.   
+A disvantage is that the model free controller does not take care of the boundary conditions of a specific car. Also, the PID controller can only calculate the best output for the current situation. That makes it hard to deal with several scenarios because of the delay of the controller.
 
 
 ### (Optional) What would you do to improve the PID controller?
